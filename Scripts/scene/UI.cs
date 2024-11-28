@@ -12,13 +12,15 @@ public partial class UI : SceneBase
     }
     public void InitUI()
     {
-        Dictionary<string, Control> ui_arr_d = new();
         Array.ForEach(ui_arr, ui =>
         {
             var ui_ = ui.Instantiate<Control>();
-            ui_arr_d.Add(ui_.Name, ui_);
+            if (dict == null)
+            {
+                dict = new Dictionary<string, Control>();
+            }
+            dict.Add(ui_.Name, ui_);
             GD.Print(ui.Instantiate().Name, "初始化完成!");
         });
-        InitDictionary(ui_arr_d);
     }
 }

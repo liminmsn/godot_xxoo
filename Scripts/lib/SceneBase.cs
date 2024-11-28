@@ -3,7 +3,7 @@ using Godot;
 
 public partial class SceneBase : Node
 {
-    Dictionary<string, Control> dict;
+    public Dictionary<string, Control> dict;
     public void InitDictionary(Dictionary<string, Control> dir)
     {
         dict = dir;
