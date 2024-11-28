@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpu40kd3l44yl"]
+
+[ext_resource type="Script" path="res://Scripts/scene/UI.cs" id="1_atllp"]
+[ext_resource type="PackedScene" uid="uid://bvor726aufivi" path="res://scene/ui/Home.res" id="1_scxr6"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D_UI" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="UI" type="Node" parent="Camera2D_UI"]
+script = ExtResource("1_atllp")
+ui_arr = Array[PackedScene]([ExtResource("1_scxr6")])
+
+[node name="Game" type="Node" parent="Camera2D_UI"]
