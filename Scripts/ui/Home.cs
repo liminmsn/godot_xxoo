@@ -20,10 +20,11 @@ public partial class Home : UIBase
 		{
 			case BtnKey.START:
 				GD.Print("开始游戏");
-				Visible = false;
+				CloseUI();
 				break;
 			case BtnKey.ABOUT:
-				GD.Print("bbb");
+				OpenUI(nameof(About));
+				GD.Print("关于");
 				break;
 		}
 	}
