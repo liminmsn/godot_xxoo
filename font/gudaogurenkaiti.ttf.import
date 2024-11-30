@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cpws1i5l38frm"
-path="res://.godot/imported/gudaogurenkaiti.ttf-a63e7d310101a48a48923c2661ba76e5.fontdata"
+path="res://.godot/imported/gudaogurenkaiti.ttf-f51b0c5db7e88936e9f5925aedb7335a.fontdata"
 
 [deps]
 
-source_file="res://Font/gudaogurenkaiti.ttf"
-dest_files=["res://.godot/imported/gudaogurenkaiti.ttf-a63e7d310101a48a48923c2661ba76e5.fontdata"]
+source_file="res://font/gudaogurenkaiti.ttf"
+dest_files=["res://.godot/imported/gudaogurenkaiti.ttf-f51b0c5db7e88936e9f5925aedb7335a.fontdata"]
 
 [params]
 
