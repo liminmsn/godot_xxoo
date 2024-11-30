@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgh6hd8m8bt44"]
+
+[ext_resource type="Texture2D" uid="uid://dt8ropxqe6l64" path="res://Image/o.svg" id="1_t8bw8"]
+
+[node name="Item" type="CenterContainer"]
+custom_minimum_size = Vector2(98, 96)
+anchors_preset = -1
+anchor_right = 0.0850694
+anchor_bottom = 0.148148
+offset_right = -98.0
+offset_bottom = -96.0
+metadata/_edit_use_anchors_ = true
+
+[node name="xo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture = ExtResource("1_t8bw8")
+expand_mode = 1

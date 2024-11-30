@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpu40kd3l44yl"]
+
+[ext_resource type="Script" path="res://Scripts/AppContext.cs" id="1_041dp"]
+[ext_resource type="Texture2D" uid="uid://bia5ykcl50brs" path="res://Image/bg.png" id="2_umcbx"]
+[ext_resource type="Script" path="res://Scripts/game/GameContext.cs" id="2_yuuor"]
+[ext_resource type="PackedScene" uid="uid://dgh6hd8m8bt44" path="res://Prefab/item.tscn" id="3_hi7oi"]
+
+[node name="Main" type="Node2D"]
+scale = Vector2(-224.564, -161.508)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("uiNode", "mainNode")]
+anchor_mode = 0
+script = ExtResource("1_041dp")
+uiNode = NodePath("UI")
+mainNode = NodePath("Game")
+
+[node name="UI" type="Node" parent="Camera2D"]
+
+[node name="Game" type="Node" parent="Camera2D"]
+script = ExtResource("2_yuuor")
+
+[node name="BG" type="TextureRect" parent="Camera2D/Game"]
+anchors_preset = -1
+anchor_left = 0.368924
+anchor_top = 0.266975
+anchor_right = 0.631076
+anchor_bottom = 0.733025
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_umcbx")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Camera2D/Game/BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Item" parent="Camera2D/Game/BG/GridContainer" instance=ExtResource("3_hi7oi")]
+layout_mode = 2
