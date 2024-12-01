@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpqsd08hkvg3f"]
+
+[ext_resource type="ArrayMesh" uid="uid://dy7jhhcwkiete" path="res://Prefab/o.res" id="1_hsxum"]
+
+[node name="O" type="MeshInstance3D"]
+transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, 0.0018851, 0.0913991, -0.0080905)
+mesh = ExtResource("1_hsxum")
