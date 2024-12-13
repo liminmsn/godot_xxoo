@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4n17udedy56y"]
+
+[ext_resource type="PackedScene" uid="uid://bvor726aufivi" path="res://Scene/ui/Home.res" id="1_d0jhx"]
+
+[node name="GameMain" type="Node"]
+
+[node name="ui" type="Node" parent="."]
+
+[node name="Home" parent="ui" instance=ExtResource("1_d0jhx")]
+
+[node name="context" type="Node" parent="."]
