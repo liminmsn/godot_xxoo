@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpu40kd3l44yl"]
 
-[ext_resource type="Script" path="res://Scripts/AppContext.cs" id="1_j0sg7"]
+[ext_resource type="PackedScene" uid="uid://bvor726aufivi" path="res://Scene/ui/Home.res" id="1_eabec"]
 
-[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("uiNode")]
+[node name="Camera2D" type="Camera2D"]
 anchor_mode = 0
-script = ExtResource("1_j0sg7")
-uiNode = NodePath("UI")
 
 [node name="UI" type="Node" parent="."]
+
+[node name="Home" parent="UI" instance=ExtResource("1_eabec")]

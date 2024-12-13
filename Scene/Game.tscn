@@ -1,39 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cickhp4m4e02c"]
+[gd_scene load_steps=2 format=3 uid="uid://cickhp4m4e02c"]
 
-[ext_resource type="ArrayMesh" uid="uid://wjwesifgq4re" path="res://Prefab/box.res" id="1_0i5ij"]
-[ext_resource type="PackedScene" uid="uid://bpqsd08hkvg3f" path="res://Prefab/o.tscn" id="2_k6bih"]
-[ext_resource type="PackedScene" uid="uid://d4lvn2dngrxxw" path="res://Prefab/x.tscn" id="3_6oilr"]
+[ext_resource type="PackedScene" uid="uid://bpu40kd3l44yl" path="res://Scene/Main.tscn" id="1_vcrem"]
 
-[node name="Game" type="Node3D"]
+[node name="Node" type="Node"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.03, 0)
-fov = 72.0
-size = 0.068
-
-[node name="Light" type="Node" parent="."]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
-transform = Transform3D(1, 0, 0, 0, 0.479381, 0.877607, 0, -0.877607, 0.479381, 0, 1.77234, 1.57473)
-spot_range = 3.75521
-spot_attenuation = -2.14
-spot_angle = 48.43
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
-transform = Transform3D(0.747137, 0.306828, -0.589612, 7.40618e-09, 0.887075, 0.461625, 0.66467, -0.344897, 0.662767, 0, 9.60384, 0)
-visible = false
-light_energy = 7.707
-light_indirect_energy = 0.0
-
-[node name="Main" type="Node" parent="."]
-
-[node name="Box" type="MeshInstance3D" parent="Main"]
-mesh = ExtResource("1_0i5ij")
-skeleton = NodePath("../..")
-
-[node name="O" parent="Main" instance=ExtResource("2_k6bih")]
-transform = Transform3D(0.225218, 0, 0, 0, 0.23, 0, 0, 0, 0.225218, 0.0018851, 0.144048, -0.0080905)
-
-[node name="X" parent="Main" instance=ExtResource("3_6oilr")]
-transform = Transform3D(0.0323923, 0, 0.0323923, 0, 0.0408575, 0, -0.0323923, 0, 0.0323923, 0.656588, 0.373216, -0.000822902)
-skeleton = NodePath("../..")
+[node name="Camera2D" parent="." instance=ExtResource("1_vcrem")]
