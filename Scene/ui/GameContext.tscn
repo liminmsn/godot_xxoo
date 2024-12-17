@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://pmtc3xlvry2h"]
+[gd_scene load_steps=6 format=3 uid="uid://tet7wytwv0ml"]
 
-[ext_resource type="ArrayMesh" uid="uid://wjwesifgq4re" path="res://Prefab/box.res" id="1_42c6n"]
-[ext_resource type="PackedScene" uid="uid://bpqsd08hkvg3f" path="res://Prefab/o.tscn" id="2_3ktqo"]
+[ext_resource type="ArrayMesh" uid="uid://diy8nanwe8qsj" path="res://Prefab/box.res" id="1_jl6c6"]
+[ext_resource type="ArrayMesh" uid="uid://dlm48ardk032n" path="res://Prefab/o.res" id="1_s4oig"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_evgrx"]
+height = 0.0871459
+radius = 0.244384
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5omxc"]
 size = Vector3(1.84996, 0.0177174, 1.83228)
@@ -26,11 +30,15 @@ light_specular = 15.854
 spot_range = 1.46417
 spot_angle = 37.811
 
-[node name="O" parent="." instance=ExtResource("2_3ktqo")]
-transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, -0.000869095, 0.782453, -0.0154721)
-disable_mode = 2
-collision_layer = 2
-motion_mode = 1
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032692, 0.192587, -0.0147109)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CylinderShape3D_evgrx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+mesh = ExtResource("1_s4oig")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -79,6 +87,6 @@ unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.956337, 0.0634362, -0.00221872)
 shape = SubResource("BoxShape3D_3io7l")
 
-[node name="Box" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = ExtResource("1_42c6n")
+[node name="Box2" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_jl6c6")
 skeleton = NodePath("../..")
