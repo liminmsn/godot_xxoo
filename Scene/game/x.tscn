@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://gkqpipne1fjv"]
+[gd_scene load_steps=6 format=3 uid="uid://b40bvgo52myxj"]
 
-[ext_resource type="ArrayMesh" uid="uid://dlm48ardk032n" path="res://Prefab/o.res" id="1_to6d6"]
+[ext_resource type="ArrayMesh" uid="uid://dagx7mum73sl7" path="res://Prefab/x.res" id="1_d0vhg"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_evgrx"]
-height = 0.0871459
-radius = 0.244384
+[sub_resource type="BoxShape3D" id="BoxShape3D_32ckq"]
+size = Vector3(0.497314, 0.105133, 0.100891)
 
 [sub_resource type="Animation" id="Animation_5x5xk"]
 length = 0.001
@@ -44,14 +43,20 @@ _data = {
 "flash": SubResource("Animation_vd3be")
 }
 
-[node name="o" type="RigidBody3D"]
+[node name="x" type="RigidBody3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_evgrx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, -0.00132751, -0.00131226)
+shape = SubResource("BoxShape3D_32ckq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.00371758, 0, -0.999993, 0, 1, 0, 0.999993, 0, -0.00371758, -0.0020752, -0.00132751, -0.00131226)
+shape = SubResource("BoxShape3D_32ckq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
-mesh = ExtResource("1_to6d6")
+transform = Transform3D(0.0435008, 0, 0, 0, 0.04, 0, 0, 0, 0.0435, 0, 0, 0)
+mesh = ExtResource("1_d0vhg")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.722687, 0.585264, 0.367681, -0.122207, -0.415385, 0.901399, 0.680286, -0.696363, -0.22867, 0.15856, 0.263205, -0.224083)
