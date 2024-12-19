@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d23a7r3fughan"]
+[gd_scene load_steps=3 format=3 uid="uid://d23a7r3fughan"]
 
 [ext_resource type="PackedScene" uid="uid://bvor726aufivi" path="res://Scene/ui/Home.res" id="1_d0jhx"]
+[ext_resource type="PackedScene" uid="uid://tet7wytwv0ml" path="res://Scene/ui/GameContext.tscn" id="2_4vgdb"]
 
 [node name="GameMain" type="Node"]
 
@@ -9,3 +10,5 @@
 [node name="Home" parent="ui" instance=ExtResource("1_d0jhx")]
 
 [node name="context" type="Node" parent="."]
+
+[node name="GameContext" parent="context" instance=ExtResource("2_4vgdb")]

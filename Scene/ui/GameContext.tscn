@@ -25,7 +25,7 @@ material = SubResource("StandardMaterial3D_vff5h")
 [sub_resource type="BoxShape3D" id="BoxShape3D_yu5qt"]
 size = Vector3(13.0227, 0.086792, 8.54468)
 
-[node name="Root" type="Node"]
+[node name="GameContext" type="Node"]
 
 [node name="Camera" type="Node" parent="."]
 
