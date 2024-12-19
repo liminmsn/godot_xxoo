@@ -13,6 +13,7 @@ namespace XXOO.script
 		public override void _Ready()
 		{
 			uiManage = new UiManage(ui, context);
+			GD.Print(uiManage.Assets.ToString());
 		}
 	}
 }

@@ -5,7 +5,7 @@ namespace XXOO.script.lib
 {
     public abstract class AssetLoadBase<T> where T : class
     {
-        protected abstract Dictionary<string, T> Assets { get; }
+        public abstract Dictionary<string, T> Assets { get; }
         public void Init(string[] paths)
         {
             foreach (string path in paths)
@@ -18,6 +18,7 @@ namespace XXOO.script.lib
                     {
                         Node node = packed.Instantiate();
                         Assets.Add(node.Name, node as T);
+                        GD.Print($"Loaded {node.Name}");
                     }
                 }
                 else

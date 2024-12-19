@@ -10,12 +10,12 @@ namespace XXOO.script.manage
         private readonly Node ui;
         private readonly Node context;
 
-        protected override Dictionary<string, PackedScene> Assets { get; } = new();
+        public override Dictionary<string, PackedScene> Assets { get; } = new();
         public UiManage(Node ui, Node context)
         {
             this.ui = ui;
             this.context = context;
-            this.Init(Asset.ui);
+            Init(Asset.ui);
         }
     }
 }
