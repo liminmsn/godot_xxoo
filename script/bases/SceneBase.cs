@@ -1,6 +1,6 @@
 using Godot;
 
-namespace XXOO.script.lib
+namespace XXOO.script.bases
 {
     public partial class SceneBase : Node
     {

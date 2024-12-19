@@ -1,6 +1,6 @@
 using Godot;
 
-namespace script.lib
+namespace script.bases
 {
     public partial class UIBase : Control
     {

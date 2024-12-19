@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-namespace XXOO.script.lib
+namespace XXOO.script.bases
 {
     public abstract class AssetLoadBase<T> where T : class
     {
