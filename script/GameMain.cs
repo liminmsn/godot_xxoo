@@ -1,18 +1,18 @@
 using Godot;
-using System;
+using XXOO.script.manage;
 
-public partial class GameMain : Node
+namespace XXOO.script
 {
-	[Export]
-	Node ui, context;
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public partial class GameMain : Node
 	{
-	}
+		[Export]
+		Node ui, context;
+		static UiManage uiManage;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		// Called when the node enters the scene tree for the first time.
+		public override void _Ready()
+		{
+			uiManage = new UiManage(ui, context);
+		}
 	}
 }
