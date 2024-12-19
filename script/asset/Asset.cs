@@ -2,6 +2,11 @@ namespace XXOO.script.asset
 {
     public static class Asset
     {
+        public enum UItype
+        {
+            ui,
+            game,
+        }
         public readonly static string[] ui = new[]
         {
             "res://scene/ui/Home.res",
@@ -9,8 +14,7 @@ namespace XXOO.script.asset
         };
         public readonly static string[] game = new[]
         {
-            "res://scene/ui/Home.res",
-            "res://scene/ui/About.res",
+            "res://scene/ui/GameContext.tscn",
         };
     }
 }

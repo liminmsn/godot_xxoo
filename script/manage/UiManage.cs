@@ -8,14 +8,16 @@ namespace XXOO.script.manage
     public class UiManage : AssetLoadBase<PackedScene>
     {
         private readonly Node ui;
-        private readonly Node context;
 
         public override Dictionary<string, PackedScene> Assets { get; } = new();
-        public UiManage(Node ui, Node context)
+        public UiManage(Node ui)
         {
             this.ui = ui;
-            this.context = context;
             Init(Asset.ui);
+        }
+        public void Show(string name)
+        {
+            // ui.AddChild(node);
         }
     }
 }

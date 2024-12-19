@@ -27,5 +27,14 @@ namespace XXOO.script.bases
                 }
             }
         }
+        public T Get(string key)
+        {
+            if (Assets.TryGetValue(key, out T asset))
+            {
+                return asset;
+            }
+            GD.PrintErr($"Asset {key} not found");
+            return null;
+        }
     }
 }
