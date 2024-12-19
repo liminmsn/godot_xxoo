@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://d23a7r3fughan"]
 
-[ext_resource type="Script" path="res://Scripts/GameMain.cs" id="1_lwxnr"]
+[ext_resource type="Script" path="res://script/GameMain.cs" id="1_n6b1i"]
 
 [node name="GameMain" type="Node" node_paths=PackedStringArray("ui", "context")]
-script = ExtResource("1_lwxnr")
+script = ExtResource("1_n6b1i")
 ui = NodePath("ui")
 context = NodePath("context")
 
