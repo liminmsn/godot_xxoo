@@ -3,19 +3,35 @@ public partial class GameMain : Node
 {
 	[Export]
 	Node ui, context;
-	public static UiManage uiManage;
-	public static GameManage gameManage;
+	private static UiManage uiManage;
+	private static GameManage gameManage;
+	private static GameMain I;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		uiManage = new UiManage(ui);
 		gameManage = new GameManage(context);
 		InitUI();
+		I = this;
 	}
-	public void InitUI()
+	static public void InitUI()
 	{
 		uiManage.Show("Home");
-		// gameManage.Show("GameContext");
+		gameManage.Show("GameContext");
+	}
+
+
+
+	public static UiManage GetUiMange()
+	{
+		return uiManage;
+	}
+	public static GameManage GetGameManage()
+	{
+		return gameManage;
+	}
+	public static GameMain GetGameApp()
+	{
+		return I;
 	}
 }
