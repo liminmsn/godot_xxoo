@@ -1,13 +1,13 @@
+using System.Linq;
 using Godot;
+using XXOO.script;
 
-namespace script.bases
+public abstract partial class UIBase : Control
 {
-    public abstract partial class UIBase : Control
+    public abstract string UName { get; }
+    public void OnBtoonDown()
     {
-        public abstract string UName { get; }
-        public void OnDown()
-        {
-            
-        }
+        var nodes = GameMain.uiManage.Assets.ToArray();
+        GD.Print(nodes[0]);
     }
 }

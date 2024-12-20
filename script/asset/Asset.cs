@@ -1,20 +1,17 @@
-namespace XXOO.script.asset
+public static class Asset
 {
-    public static class Asset
+    public enum UItype
     {
-        public enum UItype
-        {
-            ui,
-            game,
-        }
-        public readonly static string[] ui = new[]
-        {
+        ui,
+        game,
+    }
+    public readonly static string[] ui = new[]
+    {
             "res://scene/ui/Home.res",
             "res://scene/ui/About.res",
         };
-        public readonly static string[] game = new[]
-        {
+    public readonly static string[] game = new[]
+    {
             "res://scene/ui/GameContext.tscn",
         };
-    }
 }
