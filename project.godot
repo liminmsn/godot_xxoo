@@ -24,6 +24,11 @@ window/stretch/aspect="ignore"
 
 project/assembly_name="XXOO"
 
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://scene/ui/About.res")
+
 [layer_names]
 
 3d_render/layer_1="box"

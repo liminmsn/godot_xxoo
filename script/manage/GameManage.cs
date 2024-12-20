@@ -13,10 +13,10 @@ public class GameManage : AssetLoadBase, Manage
     }
     public void Show(string name)
     {
-        // Get(name, out var scene);
-        // if (scene != null)
-        // {
-        //     context.AddChild(scene);
-        // }
+        Get(name, out var scene);
+        if (scene != null)
+        {
+            context.AddChild(scene);
+        }
     }
 }
