@@ -2,6 +2,7 @@ using XXOO.script.asset;
 using XXOO.script.bases;
 using System.Collections.Generic;
 using Godot;
+using System;
 
 namespace XXOO.script.manage
 {
@@ -17,7 +18,11 @@ namespace XXOO.script.manage
         }
         public void Show(string name)
         {
-            // ui.AddChild(node);
+            Get(name, out var scene);
+            if (scene != null)
+            {
+                ui.AddChild(scene);
+            }
         }
     }
 }

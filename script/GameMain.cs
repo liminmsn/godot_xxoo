@@ -15,6 +15,12 @@ namespace XXOO.script
 		{
 			uiManage = new UiManage(ui);
 			gameManage = new GameManage(context);
+			InitUI();
+		}
+		public void InitUI()
+		{
+			uiManage.Show("Home");
+			gameManage.Show("GameContext");
 		}
 	}
 }

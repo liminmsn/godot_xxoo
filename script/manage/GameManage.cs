@@ -15,5 +15,13 @@ namespace XXOO.script.manage
             this.context = context;
             Init(Asset.game);
         }
+        public void Show(string name)
+        {
+            Get(name, out var scene);
+            if (scene != null)
+            {
+                context.AddChild(scene);
+            }
+        }
     }
 }
