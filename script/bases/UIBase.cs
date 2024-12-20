@@ -1,6 +1,5 @@
 using System.Linq;
 using Godot;
-using XXOO.script;
 
 public abstract partial class UIBase : Control
 {
