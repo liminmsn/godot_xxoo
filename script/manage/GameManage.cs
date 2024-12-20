@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-public class GameManage : AssetLoadBase
+public class GameManage : AssetLoadBase, Manage
 {
     private readonly Node context;
 

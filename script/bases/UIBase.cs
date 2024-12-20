@@ -7,6 +7,6 @@ public abstract partial class UIBase : Control
     public void OnStartButtonUp()
     {
         var nodes = GameMain.uiManage.Assets.ToArray();
-        GD.Print(nodes[0],nodes[1]);
+        GD.Print(nodes[0], nodes[1]);
     }
 }

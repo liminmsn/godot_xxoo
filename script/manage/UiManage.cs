@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-public class UiManage : AssetLoadBase
+public class UiManage : AssetLoadBase, Manage
 {
     private readonly Node ui;
 
