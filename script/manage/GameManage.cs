@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Godot;
 
-public class GameManage : AssetLoadBase<PackedScene>
+public class GameManage : AssetLoadBase
 {
     private readonly Node context;
 
-    public override Dictionary<string, PackedScene> Assets { get; } = new();
+    public override Dictionary<string, object> Assets { get; } = new();
     public GameManage(Node context)
     {
         this.context = context;
@@ -13,7 +13,6 @@ public class GameManage : AssetLoadBase<PackedScene>
     }
     public void Show(string name)
     {
-        Get(name);
         // Get(name, out var scene);
         // if (scene != null)
         // {

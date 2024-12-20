@@ -1,12 +1,13 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class Home : UIBase
 {
-    public override string UName => "hello";
+	public override string UName => "Home";
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
 	{
 	}
 

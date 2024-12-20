@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Godot;
 
-public class UiManage : AssetLoadBase<PackedScene>
+public class UiManage : AssetLoadBase
 {
     private readonly Node ui;
 
-    public override Dictionary<string, PackedScene> Assets { get; } = new();
+    public override Dictionary<string, object> Assets { get; } = new();
     public UiManage(Node ui)
     {
         this.ui = ui;
@@ -13,11 +13,8 @@ public class UiManage : AssetLoadBase<PackedScene>
     }
     public void Show(string name)
     {
-        Get(name);
-        // Get(name, out var scene);
-        // if (scene != null)
-        // {
-        //     ui.AddChild(scene);
-        // }
+        Get(name, out Node node);
+        GD.Print($"显示ui:{name} _ {node}");
+        ui.AddChild(node);
     }
 }
