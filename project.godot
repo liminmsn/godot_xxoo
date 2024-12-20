@@ -27,7 +27,6 @@ project/assembly_name="XXOO"
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://scene/ui/About.res")
 
 [layer_names]
 
