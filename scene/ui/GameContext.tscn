@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://tet7wytwv0ml"]
 
-[ext_resource type="ArrayMesh" uid="uid://diy8nanwe8qsj" path="res://Prefab/box.res" id="1_jl6c6"]
-[ext_resource type="PackedScene" uid="uid://gkqpipne1fjv" path="res://Scene/game/o.tscn" id="1_s2iyv"]
-[ext_resource type="PackedScene" uid="uid://b40bvgo52myxj" path="res://Scene/game/x.tscn" id="2_cnqoy"]
-[ext_resource type="PackedScene" uid="uid://wieajilw2c2k" path="res://Scene/game/pos.tscn" id="4_b5brm"]
+[ext_resource type="ArrayMesh" uid="uid://diy8nanwe8qsj" path="res://prefab/box.res" id="1_jl6c6"]
+[ext_resource type="PackedScene" uid="uid://gkqpipne1fjv" path="res://scene/game/o.tscn" id="1_s2iyv"]
+[ext_resource type="PackedScene" uid="uid://b40bvgo52myxj" path="res://scene/game/x.tscn" id="2_cnqoy"]
+[ext_resource type="PackedScene" uid="uid://wieajilw2c2k" path="res://scene/game/pos.tscn" id="4_b5brm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nqkg8"]
 radius = 0.06461

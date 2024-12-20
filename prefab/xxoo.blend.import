@@ -40,7 +40,7 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Prefab/box.res"
+"save_to_file/path": "res://prefab/box.res"
 },
 "xxoo_立方体_001": {
 "generate/lightmap_uv": 0,
@@ -49,7 +49,7 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Prefab/x.res"
+"save_to_file/path": "res://prefab/x.res"
 },
 "xxoo_贝塞尔圆环_001": {
 "generate/lightmap_uv": 0,
@@ -58,7 +58,7 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Prefab/o.res"
+"save_to_file/path": "res://prefab/o.res"
 }
 }
 }

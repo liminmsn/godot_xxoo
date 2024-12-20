@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b40bvgo52myxj"]
 
-[ext_resource type="ArrayMesh" uid="uid://dagx7mum73sl7" path="res://Prefab/x.res" id="1_d0vhg"]
+[ext_resource type="ArrayMesh" uid="uid://dagx7mum73sl7" path="res://prefab/x.res" id="1_d0vhg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32ckq"]
 size = Vector3(0.497314, 0.105133, 0.100891)
