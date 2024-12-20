@@ -27,18 +27,11 @@ namespace XXOO.script.bases
                 }
             }
         }
-        public void Get(string key, out Node node)
+        public void Get(string key)
         {
-            if (Assets.TryGetValue(key, out T asset))
-            {
-                node = asset as Node;
-                GD.Print($"Get {asset}");
-            }
-            else
-            {
-                GD.PrintErr($"Asset {key} not found");
-                node = null;
-            }
+            GD.Print(key);
+            Assets.TryGetValue(key, out T node_);
+            GD.Print(node_);
         }
     }
 }

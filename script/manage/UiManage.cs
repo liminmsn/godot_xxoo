@@ -18,11 +18,12 @@ namespace XXOO.script.manage
         }
         public void Show(string name)
         {
-            Get(name, out var scene);
-            if (scene != null)
-            {
-                ui.AddChild(scene);
-            }
+            Get(name);
+            // Get(name, out var scene);
+            // if (scene != null)
+            // {
+            //     ui.AddChild(scene);
+            // }
         }
     }
 }

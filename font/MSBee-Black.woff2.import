@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://duhjjsetjsvrf"
-path="res://.godot/imported/MSBee-Black.woff2-c0f991402ce821831fa81ae493676d1b.fontdata"
+path="res://.godot/imported/MSBee-Black.woff2-43eb3f2b6fe69871336c57b84b19566d.fontdata"
 
 [deps]
 
-source_file="res://font/MSBee-Black.woff2"
-dest_files=["res://.godot/imported/MSBee-Black.woff2-c0f991402ce821831fa81ae493676d1b.fontdata"]
+source_file="res://Font/MSBee-Black.woff2"
+dest_files=["res://.godot/imported/MSBee-Black.woff2-43eb3f2b6fe69871336c57b84b19566d.fontdata"]
 
 [params]
 

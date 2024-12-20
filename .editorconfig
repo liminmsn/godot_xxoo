@@ -1,0 +1,7 @@
+[*.cs]
+
+# Default severity for analyzer diagnostics with category 'Design'
+dotnet_analyzer_diagnostic.category-Design.severity = suggestion
+
+# CA1050: 在命名空间中声明类型
+dotnet_diagnostic.CA1050.severity = none
