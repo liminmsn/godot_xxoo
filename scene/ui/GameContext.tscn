@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://tet7wytwv0ml"]
+[gd_scene load_steps=12 format=3 uid="uid://tet7wytwv0ml"]
 
+[ext_resource type="Script" path="res://script/scene/GameContext.cs" id="1_8yhlm"]
 [ext_resource type="ArrayMesh" uid="uid://diy8nanwe8qsj" path="res://prefab/box.res" id="1_jl6c6"]
 [ext_resource type="PackedScene" uid="uid://gkqpipne1fjv" path="res://scene/game/o.tscn" id="1_s2iyv"]
 [ext_resource type="PackedScene" uid="uid://b40bvgo52myxj" path="res://scene/game/x.tscn" id="2_cnqoy"]
@@ -26,6 +27,9 @@ material = SubResource("StandardMaterial3D_vff5h")
 size = Vector3(13.0227, 0.086792, 8.54468)
 
 [node name="GameContext" type="Node"]
+script = ExtResource("1_8yhlm")
+X = ExtResource("2_cnqoy")
+O = ExtResource("1_s2iyv")
 
 [node name="Camera" type="Node" parent="."]
 
@@ -51,13 +55,14 @@ node_b = NodePath("../RigidBody3D")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.806708, 0.89317, 1.19477)
-light_color = Color(0.947759, 0.549422, 0.479693, 1)
+light_color = Color(0.751079, 0.677756, 0.318013, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953235, 0.89317, -0.434982)
-light_color = Color(0, 0.523727, 0.929855, 1)
+light_color = Color(0.63837, 0.493661, 0.221694, 1)
 
 [node name="qipan" type="StaticBody3D" parent="."]
+top_level = true
 
 [node name="bottom" type="CollisionShape3D" parent="qipan"]
 unique_name_in_owner = true
@@ -145,29 +150,29 @@ shape = SubResource("BoxShape3D_yu5qt")
 
 [node name="position" type="Node3D" parent="."]
 
-[node name="pos" parent="position" instance=ExtResource("4_b5brm")]
+[node name="pos0" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.639107, 0.0346678, 0.626387)
 
-[node name="pos2" parent="position" instance=ExtResource("4_b5brm")]
+[node name="pos1" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00318819, 0.0346678, 0.626387)
 
-[node name="pos3" parent="position" instance=ExtResource("4_b5brm")]
+[node name="pos2" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63613, 0.0346678, 0.626387)
 
-[node name="pos4" parent="position" instance=ExtResource("4_b5brm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63613, 0.0346678, -0.00967193)
-
-[node name="pos5" parent="position" instance=ExtResource("4_b5brm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00928348, 0.0346678, -0.00967193)
-
-[node name="pos6" parent="position" instance=ExtResource("4_b5brm")]
+[node name="pos3" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.645343, 0.0346678, -0.00967193)
 
-[node name="pos7" parent="position" instance=ExtResource("4_b5brm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639392, 0.0346678, -0.645643)
+[node name="pos4" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00928348, 0.0346678, -0.00967193)
 
-[node name="pos8" parent="position" instance=ExtResource("4_b5brm")]
+[node name="pos5" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63613, 0.0346678, -0.00967193)
+
+[node name="pos6" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642081, 0.0346678, -0.645643)
+
+[node name="pos7" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00602108, 0.0346678, -0.645643)
 
-[node name="pos9" parent="position" instance=ExtResource("4_b5brm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642081, 0.0346678, -0.645643)
+[node name="pos8" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639392, 0.0346678, -0.645643)

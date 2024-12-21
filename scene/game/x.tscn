@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dagx7mum73sl7" path="res://prefab/x.res" id="1_d0vhg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32ckq"]
-size = Vector3(0.497314, 0.105133, 0.100891)
+size = Vector3(0.42218, 0.105133, 0.100891)
 
 [sub_resource type="Animation" id="Animation_5x5xk"]
 length = 0.001
@@ -47,7 +47,7 @@ _data = {
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, -0.00132751, -0.00131226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00387578, -0.00132751, -0.00131226)
 shape = SubResource("BoxShape3D_32ckq")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
