@@ -45,6 +45,7 @@ _data = {
 
 [node name="x" type="RigidBody3D"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+metadata/type = "x"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00387578, -0.00132751, -0.00131226)

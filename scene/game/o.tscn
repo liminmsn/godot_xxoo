@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="o" type="RigidBody3D"]
+metadata/type = "o"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_evgrx")
