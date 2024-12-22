@@ -129,7 +129,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -2.215, 0.046, -0.118)
 
 [node name="o" parent="qipan" instance=ExtResource("1_s2iyv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.085, 0.195, 0.998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16253, 0.271683, 1.01493)
 
 [node name="o2" parent="qipan" instance=ExtResource("1_s2iyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.435, 0.195, 0.578)
