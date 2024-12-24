@@ -4,9 +4,15 @@ using System.Linq;
 
 public partial class GameContext : GameBase
 {
+	[Export]
+	Control setting, content;
 	public override void _Ready()
 	{
 		Init();
+	}
+	public void onBtn(string btnkey)
+	{
+		GD.Print(btnkey);
 	}
 	private void Init()
 	{

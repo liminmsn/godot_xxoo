@@ -10,6 +10,8 @@ public partial class Home : UIBase
 		{
 			case "start":
 				Close();
+				GameMain.GetGameManage().Show("GameContext");
+				// gameManage.Show("GameContext");
 				break;
 			case "about":
 				Show("About");

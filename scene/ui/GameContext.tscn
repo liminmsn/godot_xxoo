@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://tet7wytwv0ml"]
+[gd_scene load_steps=13 format=3 uid="uid://tet7wytwv0ml"]
 
-[ext_resource type="Script" path="res://script/scene/GameContext.cs" id="1_8yhlm"]
 [ext_resource type="ArrayMesh" uid="uid://diy8nanwe8qsj" path="res://prefab/box.res" id="1_jl6c6"]
+[ext_resource type="Script" path="res://script/scene/game/GameContext.cs" id="1_ochpj"]
 [ext_resource type="PackedScene" uid="uid://gkqpipne1fjv" path="res://scene/game/o.tscn" id="1_s2iyv"]
 [ext_resource type="PackedScene" uid="uid://b40bvgo52myxj" path="res://scene/game/x.tscn" id="2_cnqoy"]
 [ext_resource type="PackedScene" uid="uid://wieajilw2c2k" path="res://scene/game/pos.tscn" id="4_b5brm"]
+[ext_resource type="FontFile" uid="uid://duhjjsetjsvrf" path="res://font/MSBee-Black.woff2" id="6_j3oiv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nqkg8"]
 radius = 0.06461
@@ -26,8 +27,10 @@ material = SubResource("StandardMaterial3D_vff5h")
 [sub_resource type="BoxShape3D" id="BoxShape3D_yu5qt"]
 size = Vector3(13.0227, 0.086792, 8.54468)
 
-[node name="GameContext" type="Node"]
-script = ExtResource("1_8yhlm")
+[node name="GameContext" type="Node" node_paths=PackedStringArray("setting", "content")]
+script = ExtResource("1_ochpj")
+setting = NodePath("Setting")
+content = NodePath("Setting/PanelContainer")
 X = ExtResource("2_cnqoy")
 O = ExtResource("1_s2iyv")
 
@@ -176,3 +179,117 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00602108, 0.0346678, -0.64
 
 [node name="pos8" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639392, 0.0346678, -0.645643)
+
+[node name="Setting" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Setting" type="Button" parent="Setting"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = " stop"
+
+[node name="PanelContainer" type="PanelContainer" parent="Setting"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -76.5
+offset_right = 84.0
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+theme_override_font_sizes/font_size = 20
+text = "Setting"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "Reset"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "Eixt"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[connection signal="button_up" from="Setting/Setting" to="." method="onBtn" binds= ["stop"]]
+[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer4/Button" to="." method="onBtn" binds= ["x"]]
+[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="onBtn" binds= ["reset"]]
+[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="onBtn" binds= ["exit"]]

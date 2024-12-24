@@ -19,7 +19,7 @@ public partial class GameMain : Node
 	static public void InitUI()
 	{
 		uiManage.Show("Home");
-		gameManage.Show("GameContext");
+		// gameManage.Show("GameContext");
 	}
 
 

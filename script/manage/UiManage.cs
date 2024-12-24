@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Godot;
-using Microsoft.VisualBasic;
 
 public class UiManage : AssetLoadBase, Manage
 {
