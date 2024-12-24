@@ -7,5 +7,9 @@ public partial class About : UIBase
     public override void OnDown(string key)
     {
         GD.Print(key);
+        if (key == "Break")
+        {
+            Visible = false;
+        }
     }
 }

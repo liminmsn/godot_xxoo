@@ -3,6 +3,7 @@ public partial class GameMain : Node
 {
 	[Export]
 	Node ui, context;
+	private static InterFace interFace;
 	private static UiManage uiManage;
 	private static GameManage gameManage;
 	private static GameMain I;
@@ -11,6 +12,7 @@ public partial class GameMain : Node
 	{
 		uiManage = new UiManage(ui);
 		gameManage = new GameManage(context);
+		interFace = new InterFace();
 		InitUI();
 		I = this;
 	}

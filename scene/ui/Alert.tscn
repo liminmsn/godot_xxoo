@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cbvmfgdc51nf8"]
+
+[node name="Alert" type="Node2D"]
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "提示"
+initial_position = 2
+visible = true
+ok_button_text = "确定"
+cancel_button_text = "取消"
+
+[node name="Label" type="Label" parent="ConfirmationDialog"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 92.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+text = "是否退出游戏？"
+horizontal_alignment = 1
