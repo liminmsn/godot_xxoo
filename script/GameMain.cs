@@ -3,23 +3,22 @@ public partial class GameMain : Node
 {
 	[Export]
 	Node ui, context;
-	private static InterFace interFace;
 	private static UiManage uiManage;
 	private static GameManage gameManage;
+	private static GameContext gameContext;
 	private static GameMain I;
 
 	public override void _Ready()
 	{
 		uiManage = new UiManage(ui);
 		gameManage = new GameManage(context);
-		interFace = new InterFace();
 		InitUI();
 		I = this;
 	}
 	static public void InitUI()
 	{
 		uiManage.Show("Home");
-		// gameManage.Show("GameContext");
+		gameManage.Show("GameContext");
 	}
 
 
@@ -35,5 +34,13 @@ public partial class GameMain : Node
 	public static GameMain GetGameApp()
 	{
 		return I;
+	}
+	public static GameContext GetGameContext()
+	{
+		return gameContext;
+	}
+	public static void SetGameContext(GameContext gameContext)
+	{
+		GameMain.gameContext = gameContext;
 	}
 }

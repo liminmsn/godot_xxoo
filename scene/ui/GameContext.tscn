@@ -27,10 +27,11 @@ material = SubResource("StandardMaterial3D_vff5h")
 [sub_resource type="BoxShape3D" id="BoxShape3D_yu5qt"]
 size = Vector3(13.0227, 0.086792, 8.54468)
 
-[node name="GameContext" type="Node" node_paths=PackedStringArray("setting", "content")]
+[node name="GameContext" type="Node" node_paths=PackedStringArray("Cureent", "Setting", "Winning")]
 script = ExtResource("1_ochpj")
-setting = NodePath("Setting")
-content = NodePath("Setting/PanelContainer")
+Cureent = NodePath("StopContext/Cureent/HBoxContainer")
+Setting = NodePath("StopContext/Setting")
+Winning = NodePath("StopContext/Winning")
 X = ExtResource("2_cnqoy")
 O = ExtResource("1_s2iyv")
 
@@ -180,7 +181,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00602108, 0.0346678, -0.64
 [node name="pos8" parent="position" groups=["鼠标点击宫格"] instance=ExtResource("4_b5brm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639392, 0.0346678, -0.645643)
 
-[node name="Setting" type="Control" parent="."]
+[node name="StopContext" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,7 +191,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Setting" type="Button" parent="Setting"]
+[node name="stop" type="Button" parent="StopContext"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -197,12 +199,36 @@ anchor_right = 1.0
 offset_left = -59.0
 offset_top = 8.0
 offset_right = -9.0
-offset_bottom = 39.0
+offset_bottom = 38.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("6_j3oiv")
 text = " stop"
 
-[node name="PanelContainer" type="PanelContainer" parent="Setting"]
+[node name="Cureent" type="PanelContainer" parent="StopContext"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00694444
+anchor_top = 0.0123457
+anchor_right = 0.0894097
+anchor_bottom = 0.058642
+pivot_offset = Vector2(180, 51)
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Cureent"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="StopContext/Cureent/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "Current:"
+
+[node name="Label2" type="Label" parent="StopContext/Cureent/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "X"
+
+[node name="Setting" type="PanelContainer" parent="StopContext"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -210,86 +236,153 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -76.5
-offset_right = 84.0
-offset_bottom = 76.5
+offset_left = -104.0
+offset_top = -87.0
+offset_right = 104.0
+offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StopContext/Setting"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StopContext/Setting/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="Button" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="Button" type="Button" parent="StopContext/Setting/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j3oiv")
 theme_override_font_sizes/font_size = 10
 text = "X"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j3oiv")
 theme_override_font_sizes/font_size = 20
 text = "Setting"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button2" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j3oiv")
-text = "Reset"
+text = "ReStart"
 
-[node name="MarginContainer3" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button2" type="Button" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button2" type="Button" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j3oiv")
 text = "Eixt"
 
-[node name="MarginContainer4" type="MarginContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Setting/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="StopContext/Setting/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 
-[connection signal="button_up" from="Setting/Setting" to="." method="onBtn" binds= ["stop"]]
-[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer4/Button" to="." method="onBtn" binds= ["x"]]
-[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="onBtn" binds= ["reset"]]
-[connection signal="button_up" from="Setting/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="onBtn" binds= ["exit"]]
+[node name="Winning" type="PanelContainer" parent="StopContext"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StopContext/Winning"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StopContext/Winning/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StopContext/Winning/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+theme_override_font_sizes/font_size = 24
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="StopContext/Winning/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="StopContext/Winning/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "The winning player"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="StopContext/Winning/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "x
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="StopContext/Winning/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StopContext/Winning/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 4.66
+alignment = 1
+
+[node name="Button" type="Button" parent="StopContext/Winning/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "ReStart"
+
+[node name="Button2" type="Button" parent="StopContext/Winning/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j3oiv")
+text = "   Hall   "
+
+[connection signal="button_up" from="StopContext/stop" to="." method="onBtn" binds= ["stop"]]
+[connection signal="button_up" from="StopContext/Setting/VBoxContainer/HBoxContainer4/Button" to="." method="onBtn" binds= ["x"]]
+[connection signal="button_up" from="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="onBtn" binds= ["reset"]]
+[connection signal="button_up" from="StopContext/Setting/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="onBtn" binds= ["exit"]]
+[connection signal="button_up" from="StopContext/Winning/VBoxContainer/HBoxContainer/Button" to="." method="onBtn" binds= ["reset"]]
+[connection signal="button_up" from="StopContext/Winning/VBoxContainer/HBoxContainer/Button2" to="." method="onBtn" binds= ["exit"]]

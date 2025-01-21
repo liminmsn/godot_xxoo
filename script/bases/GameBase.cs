@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Godot;
 public abstract partial class GameBase : Node
 {
+    [Export]
+    protected Control Cureent, Setting, Winning;
     protected RigidBody3D Pos { get; set; }
     public override void _Input(InputEvent @event)
     {
@@ -33,15 +35,25 @@ public abstract partial class GameBase : Node
             xo_pawn.Transform = transform;
             AddChild(xo_pawn);
             Pawns[idx] = xo_pawn;
+            if (Pawns.All(item => item != null))
+            {
+                // GD.Print("平局！！！");
+                await Task.Delay(500);//延迟一秒
+                Winning.Visible = true;
+                Winning.GetChildren()[0].GetNode<Label>("Label3").Text = "draw!";
+            }
+            else
             if (IsWin(xo_pawn) != null) //判断当前棋子是否赢
             {
-                GD.Print($"{xo_pawn.GetMeta("type")} 获胜！！！");
+                // GD.Print($"{xo_pawn.GetMeta("type")} 获胜！！！");
                 await Task.Delay(500);//延迟一秒
-                DestoryAll();
+                Winning.Visible = true;
+                Winning.GetChildren()[0].GetNode<Label>("Label3").Text = (String)xo_pawn.GetMeta("type");
             }
             else //下一个玩家走棋子
             {
                 IsX = !IsX;
+                Cureent.GetNode<Label>("Label2").Text = IsX ? "X" : "O";
             }
         }
     }
@@ -115,7 +127,7 @@ public abstract partial class GameBase : Node
         return pawn_win;
     }
     //清空棋盘
-    private void DestoryAll()
+    protected void DestoryAll()
     {
         for (uint i = 0; i < Pawns.Length; i++)
         {
@@ -123,7 +135,7 @@ public abstract partial class GameBase : Node
             {
                 RemoveChild(Pawns[i]);
                 Pawns[i] = null;
-                GD.Print(Pawns[i]);
+                // GD.Print(Pawns[i]);
             }
         }
     }
@@ -145,14 +157,16 @@ public abstract partial class GameBase : Node
         }
         return Pawns[idx];
     }
-
-
     //随机bol值
     protected void RandomIsX()
     {
         // 生成随机布尔值
         bool randomBool = new Random().Next(2) == 0;
         IsX = randomBool;
-        // GD.Print("随机布尔值: ", IsX);
+        GD.Print("随机布尔值: ", IsX);
+        Cureent.GetNode<Label>("Label2").Text = IsX ? "X" : "O";
+        DestoryAll(); //清空棋盘
+        Setting.Visible = false;
+        Winning.Visible = false;
     }
 }
